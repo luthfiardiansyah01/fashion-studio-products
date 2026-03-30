@@ -1,4 +1,3 @@
-```markdown
 # 🛒 Fashion Studio - ETL Pipeline
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
@@ -31,5 +30,3 @@ Proyek ini dibangun dengan prinsip **Modular Code** untuk memudahkan unit testin
   - Ekspor data bersih ke **Google Sheets API** (Update data tanpa membuat file baru berulang kali).
   - Ekspor data bersih ke **PostgreSQL / Supabase** (Cloud Database).
   - Setiap fungsi penyimpanan dilengkapi *error handling* spesifik.
-
-```
