@@ -1,0 +1,55 @@
+========================================
+SUBMISSION ETL PIPELINE - FASHION STUDIO
+========================================
+
+Nama        : Luthfi Ardiansyah
+Email       : luthfinasution95@gmail.com
+
+DESKRIPSI PROYEK:
+------------------
+Proyek ini merupakan ETL Pipeline untuk mengambil data produk fashion dari kompetitor "Fashion Studio".
+
+FITUR YANG DIIMPLEMENTASIKAN:
+-----------------------------
+
+1. EXTRACT (extract.py):
+   - Web scraping dari https://fashion-studio.dicoding.dev/
+   - Mengambil data dari halaman 1 sampai 50
+   - Data yang diambil: Title, Price, Rating, Colors, Size, Gender
+   - Menambahkan kolom timestamp untuk waktu ekstraksi
+   - Error handling untuk berbagai jenis error (timeout, connection, HTTP error)
+
+2. TRANSFORM (transform.py):
+   - Konversi harga USD ke IDR (rate Rp16.000)
+   - Pembersihan kolom Rating (menjadi float)
+   - Pembersihan kolom Colors (menjadi integer)
+   - Pembersihan kolom Size (menghapus prefix "Size: ")
+   - Pembersihan kolom Gender (menghapus prefix "Gender: ")
+   - Penghapusan data invalid ("Unknown Product")
+   - Penghapusan data duplikat
+   - Penghapusan data dengan nilai null
+   - Konversi tipe data sesuai spesifikasi
+   - Error handling untuk setiap fungsi
+
+3. LOAD (load.py):
+   - Penyimpanan ke file CSV
+   - Penyimpanan ke Google Sheets (opsional)
+   - Penyimpanan ke PostgreSQL (opsional)
+   - Error handling untuk setiap fungsi
+
+UNIT TESTING:
+-------------
+- Test coverage > 80%
+- Tests untuk semua fungsi di extract.py, transform.py, load.py
+- Testing untuk success cases, error cases, dan edge cases
+
+CARA MENJALANKAN:
+-----------------
+1. Install dependencies: pip install -r requirements.txt
+2. Jalankan ETL Pipeline: python main.py
+3. Jalankan unit tests: pytest tests/ -v --cov=utils --cov-report=term-missing
+
+CATATAN:
+--------
+- Untuk Google Sheets: Pastikan file google-sheets-api.json berisi service account credentials yang valid
+- Untuk PostgreSQL: Set environment variables DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD

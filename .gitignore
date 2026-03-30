@@ -1,0 +1,49 @@
+# ======================
+# SENSITIVE FILES (WAJIB!)
+# ======================
+.env
+google-sheets-api.json
+*.pem
+*.key
+
+# ======================
+# PYTHON
+# ======================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ======================
+# VIRTUAL ENVIRONMENT
+# ======================
+venv/
+env/
+ENV/
+
+# ======================
+# IDE / EDITOR
+# ======================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ======================
+# TEST & COVERAGE
+# ======================
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ======================
+# PROJECT SPECIFIC
+# ======================
+# Mengabaikan file output hasil scraping (agar repo tidak berat)
+products.csv
+debug_output.html
+
+# Mengabaikan script debug yang hanya dipakai sementara
+cleanup_drive.py
+test_connection.py
